@@ -78,8 +78,6 @@ const getEnum = async () => {
     allEntries.join('\n'),
     '}',
     '',
-    'export default PostgresError;',
-    '',
   ].join('\n');
 };
 
