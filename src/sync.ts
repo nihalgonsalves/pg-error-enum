@@ -20,7 +20,7 @@ const groupBySections = (lines: string[]) => {
   const sections: Record<string, { description: string, lines: string[] }> = {};
   let currentSection = '';
 
-  lines.forEach(line => {
+  lines.forEach((line) => {
     const matches = line.match(sectionRegex);
 
     if (matches) {
@@ -35,10 +35,10 @@ const groupBySections = (lines: string[]) => {
   });
 
   return Object.values(sections);
-}
+};
 
 const errorLineRegex =
-  /^(?<sqlstate>[A-Z0-9]*)\s*(?<severity>[EWS])\s*ERRCODE_(?<constant>[A-Z_]*)\s*(?<code>[a-z_]*)$/
+  /^(?<sqlstate>[A-Z0-9]*)\s*(?<severity>[EWS])\s*ERRCODE_(?<constant>[A-Z_]*)\s*(?<code>[a-z_]*)$/;
 
 const parseErrorLine = (line: string) => {
   const matches = line.match(errorLineRegex);
@@ -64,19 +64,25 @@ const getEnum = async () => {
 
   const enumEntries = errorSections.map(section =>
     section.errorCodes.map(
+      // tslint:disable-next-line: max-line-length
       errorCode => `  /** ${section.description}: [${errorCode.severity}] ${errorCode.code} */\n  ${errorCode.constant} = '${errorCode.sqlstate}',`,
     ),
   );
 
   const allEntries = lodashFlatten(enumEntries);
 
-  return `export enum PostgresError {\n${
-    allEntries.join('\n')
-  }\n}\n`;
-}
+  return [
+    '// tslint:disable:max-line-length',
+    '',
+    'export enum PostgresError {',
+    allEntries.join('\n'),
+    '}',
+    '',
+  ].join('\n');
+};
 
 const writeEnum = (enumString: string) => {
-  writeFileSync(join(__dirname, '../lib/PostgresError.ts'), enumString);
-}
+  writeFileSync(join(__dirname, '../src/PostgresError.ts'), enumString);
+};
 
 getEnum().then(writeEnum);

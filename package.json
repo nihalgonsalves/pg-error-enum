@@ -1,24 +1,29 @@
 {
-  "name": "pg-error-constants-ts",
-  "version": "0.1.0",
-  "description": "TypeScript Enums for Postgres Errors",
+  "name": "pg-error-enum",
+  "version": "0.1.1",
+  "description": "TypeScript Enum for Postgres Errors with no runtime dependencies",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "sync": "ts-node --transpile-only lib/sync.ts",
-    "build": "tsc",
-    "release": "npm run sync && npm run build",
+    "sync": "ts-node --transpile-only src/sync.ts",
+    "clean": "rm -fR ./dist/",
+    "build": "tsc --build tsconfig.build.json",
+    "lint": "tslint --project .",
     "test": "exit 0"
   },
+  "files": [
+    "dist/**/*"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nihalgonsalves/pg-error-constants-ts.git"
+    "url": "git+https://github.com/nihalgonsalves/pg-error-enum.git"
   },
   "author": "Nihal Gonsalves <nihal@nihalgonsalves.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nihalgonsalves/pg-error-constants-ts/issues"
+    "url": "https://github.com/nihalgonsalves/pg-error-enum/issues"
   },
-  "homepage": "https://github.com/nihalgonsalves/pg-error-constants-ts#readme",
+  "homepage": "https://github.com/nihalgonsalves/pg-error-enum#readme",
   "devDependencies": {
     "@types/isomorphic-fetch": "0.0.35",
     "@types/lodash.flatten": "^4.4.6",
@@ -27,6 +32,7 @@
     "lodash.flatten": "^4.4.0",
     "ts-node": "^8.0.3",
     "tslint": "^5.14.0",
+    "tslint-config-airbnb": "^5.11.1",
     "typescript": "^3.3.3333"
   }
 }
