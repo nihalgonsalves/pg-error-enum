@@ -1,3 +1,5 @@
+// tslint:disable:max-line-length
+
 export enum PostgresError {
   /** Class 00 - Successful Completion: [S] successful_completion */
   SUCCESSFUL_COMPLETION = '00000',
@@ -496,3 +498,5 @@ export enum PostgresError {
   /** Class XX - Internal Error: [E] index_corrupted */
   INDEX_CORRUPTED = 'XX002',
 }
+
+export default PostgresError;

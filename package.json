@@ -3,12 +3,16 @@
   "version": "0.1.0",
   "description": "TypeScript Enums for Postgres Errors",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "sync": "ts-node --transpile-only lib/sync.ts",
+    "prepare": "npm run sync && npm run build",
+    "sync": "ts-node --transpile-only src/sync.ts",
     "build": "tsc",
-    "release": "npm run sync && npm run build",
     "test": "exit 0"
   },
+  "files": [
+    "dist/**/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nihalgonsalves/pg-error-constants-ts.git"
@@ -27,6 +31,7 @@
     "lodash.flatten": "^4.4.0",
     "ts-node": "^8.0.3",
     "tslint": "^5.14.0",
+    "tslint-config-airbnb": "^5.11.1",
     "typescript": "^3.3.3333"
   }
 }
