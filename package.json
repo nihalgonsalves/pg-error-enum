@@ -8,6 +8,7 @@
     "prepare": "npm run sync && npm run build",
     "sync": "ts-node --transpile-only src/sync.ts",
     "build": "tsc",
+    "lint": "tslint --project .",
     "test": "exit 0"
   },
   "files": [
