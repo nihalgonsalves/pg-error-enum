@@ -7,7 +7,7 @@
     "sync": "ts-node --transpile-only lib/sync.ts",
     "build": "tsc",
     "release": "npm run sync && npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "exit 0"
   },
   "repository": {
     "type": "git",
