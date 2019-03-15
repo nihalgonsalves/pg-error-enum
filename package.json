@@ -5,7 +5,6 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "prepare": "npm run sync && npm run clean && npm run build",
     "sync": "ts-node --transpile-only src/sync.ts",
     "clean": "rm -fR ./dist/",
     "build": "tsc --build tsconfig.build.json",
