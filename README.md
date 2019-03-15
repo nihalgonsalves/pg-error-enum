@@ -1,5 +1,8 @@
 # pg-error-enum
 
+![npm version](https://img.shields.io/npm/v/pg-error-enum.svg)
+![travis build status](https://travis-ci.org/nihalgonsalves/pg-error-constants-ts.svg?branch=master)
+
 TypeScript Enum for Postgres Errors with no runtime dependencies. Also compatible with plain JavaScript.
 
 ## Quick Start
