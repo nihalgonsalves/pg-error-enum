@@ -2,9 +2,12 @@
   "name": "pg-error-constants-ts",
   "version": "0.1.0",
   "description": "TypeScript Enums for Postgres Errors",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sync": "ts-node --transpile-only lib/sync.ts",
+    "build": "tsc",
+    "release": "npm run sync && npm run build",
+    "test": "exit 0"
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,15 @@
   "bugs": {
     "url": "https://github.com/nihalgonsalves/pg-error-constants-ts/issues"
   },
-  "homepage": "https://github.com/nihalgonsalves/pg-error-constants-ts#readme"
+  "homepage": "https://github.com/nihalgonsalves/pg-error-constants-ts#readme",
+  "devDependencies": {
+    "@types/isomorphic-fetch": "0.0.35",
+    "@types/lodash.flatten": "^4.4.6",
+    "@types/node": "^10.14.1",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash.flatten": "^4.4.0",
+    "ts-node": "^8.0.3",
+    "tslint": "^5.14.0",
+    "typescript": "^3.3.3333"
+  }
 }
