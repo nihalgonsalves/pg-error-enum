@@ -1,0 +1,19 @@
+{
+  "name": "pg-error-constants-ts",
+  "version": "0.1.0",
+  "description": "TypeScript Enums for Postgres Errors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nihalgonsalves/pg-error-constants-ts.git"
+  },
+  "author": "Nihal Gonsalves <nihal@nihalgonsalves.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nihalgonsalves/pg-error-constants-ts/issues"
+  },
+  "homepage": "https://github.com/nihalgonsalves/pg-error-constants-ts#readme"
+}
