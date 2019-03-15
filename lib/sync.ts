@@ -76,7 +76,7 @@ const getEnum = async () => {
 }
 
 const writeEnum = (enumString: string) => {
-  writeFileSync(join(__dirname, '../src/PostgresError.ts'), enumString);
+  writeFileSync(join(__dirname, '../lib/PostgresError.ts'), enumString);
 }
 
 getEnum().then(writeEnum);

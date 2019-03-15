@@ -2,9 +2,11 @@
   "name": "pg-error-constants-ts",
   "version": "0.1.0",
   "description": "TypeScript Enums for Postgres Errors",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "sync": "ts-node --transpile-only bin/sync.ts",
+    "sync": "ts-node --transpile-only lib/sync.ts",
+    "build": "tsc",
+    "release": "npm run sync && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
