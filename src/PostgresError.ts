@@ -1,4 +1,4 @@
-// tslint:disable:max-line-length
+/* eslint-disable max-len */
 
 export enum PostgresError {
   /** Class 00 - Successful Completion: [S] successful_completion */

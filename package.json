@@ -8,7 +8,8 @@
     "sync": "ts-node --transpile-only src/sync.ts",
     "clean": "rm -fR ./dist/",
     "build": "tsc --build tsconfig.build.json",
-    "lint": "tslint --project .",
+    "lint": "eslint './src/**/*.ts'",
+    "format": "eslint './src/**/*.ts' --fix",
     "test": "exit 0"
   },
   "files": [
@@ -28,11 +29,14 @@
     "@types/isomorphic-fetch": "0.0.35",
     "@types/lodash.flatten": "^4.4.6",
     "@types/node": "^12.0.12",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "eslint": "^6.2.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
     "isomorphic-fetch": "^2.2.1",
     "lodash.flatten": "^4.4.0",
     "ts-node": "^8.0.3",
-    "tslint": "^5.14.0",
-    "tslint-config-airbnb": "^5.11.1",
     "typescript": "^3.3.3333"
   }
 }
