@@ -1,4 +1,4 @@
 {
   "extends": "./tsconfig.json",
-  "exclude": ["src/sync.ts"]
+  "exclude": ["dist", "src/sync.ts"]
 }
