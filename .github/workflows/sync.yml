@@ -1,0 +1,57 @@
+name: Sync Enum
+on:
+  schedule:
+    # https://crontab.guru/#0_9_*_*_1
+    # At 09:00 on Monday.
+    - cron: '0 9 * * 1'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          ref: ${{ github.ref }}
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - run: npm ci
+      - run: npm run sync
+      - name: git config
+        run: |
+          git config --local user.name "pg-error-enum-ci"
+          git config --local user.email "nihal+ci@nihalgonsalves.com"
+      - name: git commit
+        env:
+          # Must be stored as base64 in the Repo > Settings > Secrets
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          GITHUB_KNOWN_HOST: ${{ secrets.GITHUB_KNOWN_HOST }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p ~/.ssh/
+          echo $PRIVATE_KEY | base64 --decode > ~/.ssh/id_rsa
+          echo $GITHUB_KNOWN_HOST > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/id_rsa
+
+          TIMESTAMP=$(date +%s)
+          git checkout -b chore/sync-$TIMESTAMP
+
+          git add src/PostgresError.ts
+
+          if [[ `git status --porcelain` ]]; then
+            git remote rm origin
+            git remote add origin git@github.com:$GITHUB_REPOSITORY.git
+
+            git commit --message "Sync with latest Postgres Errors"
+            git push -u origin chore/sync-$TIMESTAMP
+
+            PAYLOAD=$(printf '{"title": "Update Enum", "head": "%s", "base": "master"}' "chore/sync-$TIMESTAMP")
+
+            curl \
+              -X POST \
+              -H 'Content-Type: application/json' \
+              -H 'Accept: application/vnd.github.v3+json' \
+              -H "Authorization: token $GITHUB_TOKEN" \
+              -d "$PAYLOAD" \
+              https://api.github.com/repos/$GITHUB_REPOSITORY/pulls
+          fi
