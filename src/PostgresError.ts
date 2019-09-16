@@ -169,6 +169,36 @@ export enum PostgresError {
   INVALID_XML_COMMENT = '2200S',
   /** Class 22 - Data Exception: [E] invalid_xml_processing_instruction */
   INVALID_XML_PROCESSING_INSTRUCTION = '2200T',
+  /** Class 22 - Data Exception: [E] duplicate_json_object_key_value */
+  DUPLICATE_JSON_OBJECT_KEY_VALUE = '22030',
+  /** Class 22 - Data Exception: [E] invalid_json_text */
+  INVALID_JSON_TEXT = '22032',
+  /** Class 22 - Data Exception: [E] invalid_sql_json_subscript */
+  INVALID_SQL_JSON_SUBSCRIPT = '22033',
+  /** Class 22 - Data Exception: [E] more_than_one_sql_json_item */
+  MORE_THAN_ONE_SQL_JSON_ITEM = '22034',
+  /** Class 22 - Data Exception: [E] no_sql_json_item */
+  NO_SQL_JSON_ITEM = '22035',
+  /** Class 22 - Data Exception: [E] non_numeric_sql_json_item */
+  NON_NUMERIC_SQL_JSON_ITEM = '22036',
+  /** Class 22 - Data Exception: [E] non_unique_keys_in_a_json_object */
+  NON_UNIQUE_KEYS_IN_A_JSON_OBJECT = '22037',
+  /** Class 22 - Data Exception: [E] singleton_sql_json_item_required */
+  SINGLETON_SQL_JSON_ITEM_REQUIRED = '22038',
+  /** Class 22 - Data Exception: [E] sql_json_array_not_found */
+  SQL_JSON_ARRAY_NOT_FOUND = '22039',
+  /** Class 22 - Data Exception: [E] sql_json_member_not_found */
+  SQL_JSON_MEMBER_NOT_FOUND = '2203A',
+  /** Class 22 - Data Exception: [E] sql_json_number_not_found */
+  SQL_JSON_NUMBER_NOT_FOUND = '2203B',
+  /** Class 22 - Data Exception: [E] sql_json_object_not_found */
+  SQL_JSON_OBJECT_NOT_FOUND = '2203C',
+  /** Class 22 - Data Exception: [E] too_many_json_array_elements */
+  TOO_MANY_JSON_ARRAY_ELEMENTS = '2203D',
+  /** Class 22 - Data Exception: [E] too_many_json_object_members */
+  TOO_MANY_JSON_OBJECT_MEMBERS = '2203E',
+  /** Class 22 - Data Exception: [E] sql_json_scalar_required */
+  SQL_JSON_SCALAR_REQUIRED = '2203F',
   /** Class 23 - Integrity Constraint Violation: [E] integrity_constraint_violation */
   INTEGRITY_CONSTRAINT_VIOLATION = '23000',
   /** Class 23 - Integrity Constraint Violation: [E] restrict_violation */
