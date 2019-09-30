@@ -171,6 +171,8 @@ export enum PostgresError {
   INVALID_XML_PROCESSING_INSTRUCTION = '2200T',
   /** Class 22 - Data Exception: [E] duplicate_json_object_key_value */
   DUPLICATE_JSON_OBJECT_KEY_VALUE = '22030',
+  /** Class 22 - Data Exception: [E] invalid_argument_for_json_datetime_function */
+  INVALID_ARGUMENT_FOR_JSON_DATETIME_FUNCTION = '22031',
   /** Class 22 - Data Exception: [E] invalid_json_text */
   INVALID_JSON_TEXT = '22032',
   /** Class 22 - Data Exception: [E] invalid_sql_json_subscript */
