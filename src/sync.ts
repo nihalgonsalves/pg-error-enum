@@ -24,7 +24,7 @@ const groupBySections = (lines: string[]): Section[] => {
   lines.forEach((line) => {
     const matches = line.match(sectionRegex);
 
-    if (matches && matches.groups) {
+    if (matches?.groups) {
       currentSection = matches.groups.description;
       sections[currentSection] = {
         description: currentSection,
@@ -43,7 +43,7 @@ const errorLineRegex = /^(?<sqlstate>[A-Z0-9]*)\s*(?<severity>[EWS])\s*ERRCODE_(
 const parseErrorLine = (line: string) => {
   const matches = line.match(errorLineRegex);
 
-  if (!matches || !matches.groups) {
+  if (!matches?.groups) {
     throw new Error(`Error parsing error line:\n\t"${line}"`);
   }
 

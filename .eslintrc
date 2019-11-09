@@ -3,6 +3,8 @@
   "plugins": ["@typescript-eslint"],
   "extends": ["airbnb-base", "plugin:@typescript-eslint/recommended"],
   "rules": {
+    // reported anyway by TypeScript, and causes false positives with 3.7
+    "no-undef": 0,
     "import/prefer-default-export": 0,
     "import/no-extraneous-dependencies": 0,
     "@typescript-eslint/explicit-function-return-type": 0
