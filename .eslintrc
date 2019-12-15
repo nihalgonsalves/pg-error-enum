@@ -5,6 +5,12 @@
   "rules": {
     // reported anyway by TypeScript, and causes false positives with 3.7
     "no-undef": 0,
+    "import/extensions": ["error", "ignorePackages", {
+      "js": "never",
+      "jsx": "never",
+      "ts": "never",
+      "tsx": "never"
+    }],
     "import/prefer-default-export": 0,
     "import/no-extraneous-dependencies": 0,
     "@typescript-eslint/explicit-function-return-type": 0
