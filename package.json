@@ -28,7 +28,7 @@
   "devDependencies": {
     "@types/isomorphic-fetch": "0.0.35",
     "@types/lodash.flatten": "^4.4.6",
-    "@types/node": "^12.12.7",
+    "@types/node": "^13.1.0",
     "@typescript-eslint/eslint-plugin": "^2.6.1",
     "@typescript-eslint/parser": "^2.6.1",
     "eslint": "^6.6.0",
