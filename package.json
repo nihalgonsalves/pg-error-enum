@@ -10,7 +10,8 @@
     "build": "tsc --build tsconfig.build.json",
     "lint": "eslint './src/**/*.ts'",
     "format": "eslint './src/**/*.ts' --fix",
-    "test": "exit 0"
+    "test": "exit 0",
+    "prepare": "npm run build"
   },
   "files": [
     "dist/**/*"
