@@ -45,7 +45,7 @@ jobs:
             git commit --message "Sync with latest Postgres Errors"
             git push -u origin chore/sync-$TIMESTAMP
 
-            PAYLOAD=$(printf '{"title": "Update Enum", "head": "%s", "base": "master"}' "chore/sync-$TIMESTAMP")
+            PAYLOAD=$(printf '{"title": "Update Enum", "head": "%s", "base": "main"}' "chore/sync-$TIMESTAMP")
 
             curl \
               -X POST \
