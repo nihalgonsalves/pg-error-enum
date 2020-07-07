@@ -1,25 +1,17 @@
 {
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
-  "extends": ["airbnb-base", "plugin:@typescript-eslint/recommended"],
-  "rules": {
-    // reported anyway by TypeScript, and causes false positives with 3.7
-    "no-undef": 0,
-    "import/extensions": ["error", "ignorePackages", {
-      "js": "never",
-      "jsx": "never",
-      "ts": "never",
-      "tsx": "never"
-    }],
-    "import/prefer-default-export": 0,
-    "import/no-extraneous-dependencies": 0,
-    "@typescript-eslint/explicit-function-return-type": 0
+  "extends": [
+    "airbnb-typescript/base", 
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
   },
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "extensions": [".js", ".ts"]
-      }
-    }
+  "rules": {
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "no-void": ["error", { "allowAsStatement": true }]
   }
 }

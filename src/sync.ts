@@ -1,3 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
 import { join } from 'path';
 import { writeFileSync } from 'fs';
 import lodashFlatten from 'lodash.flatten';
@@ -22,7 +24,7 @@ const groupBySections = (lines: string[]): Section[] => {
   let currentSection = '';
 
   lines.forEach((line) => {
-    const matches = line.match(sectionRegex);
+    const matches = sectionRegex.exec(line);
 
     if (matches?.groups) {
       currentSection = matches.groups.description;
@@ -41,7 +43,7 @@ const groupBySections = (lines: string[]): Section[] => {
 const errorLineRegex = /^(?<sqlstate>[A-Z0-9]*)\s*(?<severity>[EWS])\s*ERRCODE_(?<constant>[A-Z_]*)\s*(?<code>[a-z_]*)$/;
 
 const parseErrorLine = (line: string) => {
-  const matches = line.match(errorLineRegex);
+  const matches = errorLineRegex.exec(line);
 
   if (!matches?.groups) {
     throw new Error(`Error parsing error line:\n\t"${line}"`);
@@ -88,4 +90,4 @@ const writeEnum = (enumString: string) => {
   writeFileSync(join(__dirname, '../src/PostgresError.ts'), enumString);
 };
 
-getEnum().then(writeEnum);
+void getEnum().then(writeEnum);
