@@ -24,9 +24,6 @@ jobs:
           git config --local user.email "nihal+ci@nihalgonsalves.com"
       - name: git commit
         env:
-          # Must be stored as base64 in the Repo > Settings > Secrets
-          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-          GITHUB_KNOWN_HOST: ${{ secrets.GITHUB_KNOWN_HOST }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           TIMESTAMP=$(date +%s)
