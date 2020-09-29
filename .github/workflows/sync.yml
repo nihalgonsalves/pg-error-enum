@@ -1,5 +1,6 @@
 name: Sync Enum
 on:
+  workflow_dispatch: {}
   schedule:
     # https://crontab.guru/#0_9_*_*_1
     # At 09:00 on Monday.
@@ -10,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2.3.2
         with:
-          ref: ${{ github.ref }}
+          ssh-key: ${{ secrets.ACTION_DEPLOY_KEY }}
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
@@ -28,11 +29,6 @@ jobs:
           GITHUB_KNOWN_HOST: ${{ secrets.GITHUB_KNOWN_HOST }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          mkdir -p ~/.ssh/
-          echo $PRIVATE_KEY | base64 --decode > ~/.ssh/id_rsa
-          echo $GITHUB_KNOWN_HOST > ~/.ssh/known_hosts
-          chmod 600 ~/.ssh/id_rsa
-
           TIMESTAMP=$(date +%s)
           git checkout -b chore/sync-$TIMESTAMP
 
