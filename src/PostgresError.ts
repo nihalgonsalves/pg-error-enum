@@ -39,6 +39,8 @@ export enum PostgresError {
   TRANSACTION_RESOLUTION_UNKNOWN = '08007',
   /** Class 08 - Connection Exception: [E] protocol_violation */
   PROTOCOL_VIOLATION = '08P01',
+  /** Class 08 - Connection Exception: [E] idle_session_timeout */
+  IDLE_SESSION_TIMEOUT = '08P02',
   /** Class 09 - Triggered Action Exception: [E] triggered_action_exception */
   TRIGGERED_ACTION_EXCEPTION = '09000',
   /** Class 0A - Feature Not Supported: [E] feature_not_supported */
