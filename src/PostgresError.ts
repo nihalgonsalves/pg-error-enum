@@ -445,6 +445,8 @@ export enum PostgresError {
   CANNOT_CONNECT_NOW = '57P03',
   /** Class 57 - Operator Intervention: [E] database_dropped */
   DATABASE_DROPPED = '57P04',
+  /** Class 57 - Operator Intervention: [E] idle_session_timeout */
+  IDLE_SESSION_TIMEOUT = '57P05',
   /** Class 58 - System Error (errors external to PostgreSQL itself): [E] system_error */
   SYSTEM_ERROR = '58000',
   /** Class 58 - System Error (errors external to PostgreSQL itself): [E] io_error */
