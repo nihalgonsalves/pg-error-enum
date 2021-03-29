@@ -2,7 +2,6 @@
 
 import { join } from 'path';
 import { writeFileSync } from 'fs';
-import lodashFlatten from 'lodash.flatten';
 import fetch from 'cross-fetch';
 
 const sourceUrl = (branch = 'master') =>
@@ -72,21 +71,18 @@ const getEnum = async () => {
     .then(groupBySections)
     .then(parseSectionLines);
 
-  const enumEntries = errorSections.map((section) =>
-    section.errorCodes.map(
-      // eslint-disable-next-line max-len
-      (errorCode) =>
-        `  /** ${section.description}: [${errorCode.severity}] ${errorCode.code} */\n  ${errorCode.constant} = '${errorCode.sqlstate}',`
-    )
-  );
-
-  const allEntries = lodashFlatten(enumEntries);
-
   return [
     '/* eslint-disable max-len */',
     '',
     'export enum PostgresError {',
-    allEntries.join('\n'),
+    errorSections
+      .flatMap((section) =>
+        section.errorCodes.map(
+          (errorCode) =>
+            `  /** ${section.description}: [${errorCode.severity}] ${errorCode.code} */\n  ${errorCode.constant} = '${errorCode.sqlstate}',`
+        )
+      )
+      .join('\n'),
     '}',
     '',
   ].join('\n');

@@ -1,4 +1,10 @@
 {
   "extends": "./tsconfig.json",
-  "exclude": ["dist", "src/sync.ts"]
+  "compilerOptions": {
+    "target": "ES5",
+    "declaration": true,
+    "outDir": "./dist",
+    "rootDir": "./src"
+  },
+  "files": ["src/PostgresError.ts", "src/index.ts"]
 }
