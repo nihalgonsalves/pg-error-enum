@@ -50,11 +50,11 @@ It follows the syntax defined in the text file, i.e., in short:
 2. Sections are parsed using:
 
    ```ts
-   /^Section:\s(?<description>.*)$/
+   const sectionRegex = /^Section:\s(?<description>.*)$/;
    ```
 
 3. Each error code is parsed using:
 
    ```ts
-   /^(?<sqlstate>[A-Z0-9]*)\s*(?<severity>[EWS])\s*ERRCODE_(?<constant>[A-Z_]*)\s*(?<code>[a-z_]*)$/
+   const errorLineRegex = /^(?<sqlstate>[A-Z0-9]*)\s*(?<severity>[EWS])\s*ERRCODE_(?<constant>[A-Z_]*)\s*(?<code>[a-z_]*)$/;
    ```

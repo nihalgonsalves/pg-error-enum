@@ -12,6 +12,7 @@ jobs:
       - name: run eslint
         run: |
           npm ci
-          npm run lint
+          npm run lint:check
+          npm run format:check
         env:
           CI: true
