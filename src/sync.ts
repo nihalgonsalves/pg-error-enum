@@ -3,11 +3,11 @@
 import { join } from 'path';
 import { writeFileSync } from 'fs';
 import lodashFlatten from 'lodash.flatten';
-import isomorphicFetch from 'isomorphic-fetch';
+import fetch from 'cross-fetch';
 
 const sourceUrl = (branch = 'master') => `https://github.com/postgres/postgres/raw/${branch}/src/backend/utils/errcodes.txt`;
 
-const getSourceText = (): Promise<string[]> => isomorphicFetch(sourceUrl())
+const getSourceText = (): Promise<string[]> => fetch(sourceUrl())
   .then((response) => response.text())
   .then((text) => text.split('\n'));
 
