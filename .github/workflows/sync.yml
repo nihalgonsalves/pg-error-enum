@@ -28,6 +28,9 @@ jobs:
           BRANCH="chore/sync-$(date +%s)"
           MESSAGE="Sync with latest Postgres Errors"
 
+          # UNCOMMENT FOR TESTING #
+          echo "// test for ${BRANCH}" >> src/PostgresError.ts
+
           git checkout -b ${BRANCH}
           git add src/PostgresError.ts
 
