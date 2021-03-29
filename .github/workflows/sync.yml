@@ -25,25 +25,18 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          TIMESTAMP=$(date +%s)
-          git checkout -b chore/sync-$TIMESTAMP
+          BRANCH="chore/sync-$(date +%s)"
+          MESSAGE="Sync with latest Postgres Errors"
 
+          # UNCOMMENT FOR TESTING #
+          # echo "// test for ${BRANCH}" >> src/PostgresError.ts
+
+          git checkout -b ${BRANCH}
           git add src/PostgresError.ts
 
           if [[ `git status --porcelain` ]]; then
-            git remote rm origin
-            git remote add origin git@github.com:$GITHUB_REPOSITORY.git
+            git commit --message "${MESSAGE}"
+            git push -u origin ${BRANCH}
 
-            git commit --message "Sync with latest Postgres Errors"
-            git push -u origin chore/sync-$TIMESTAMP
-
-            PAYLOAD=$(printf '{"title": "Update Enum", "head": "%s", "base": "main"}' "chore/sync-$TIMESTAMP")
-
-            curl \
-              -X POST \
-              -H 'Content-Type: application/json' \
-              -H 'Accept: application/vnd.github.v3+json' \
-              -H "Authorization: token $GITHUB_TOKEN" \
-              -d "$PAYLOAD" \
-              https://api.github.com/repos/$GITHUB_REPOSITORY/pulls
+            gh pr create --title "${MESSAGE}" --body ""
           fi
