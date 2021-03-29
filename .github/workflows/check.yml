@@ -11,6 +11,7 @@ jobs:
       - name: run eslint
         run: |
           npm ci
+          npm run build
           npm run typecheck
           npm run lint:check
           npm run format:check
