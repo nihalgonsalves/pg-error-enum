@@ -3,11 +3,12 @@
     "target": "es2020",
     "module": "commonjs",
     "strict": true,
+    "outDir": "./dist",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true
   },
-  "files": ["bin/sync.ts"]
+  "files": ["bin/sync.ts", "bin/test.js"]
 }

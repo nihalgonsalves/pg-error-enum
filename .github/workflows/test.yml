@@ -14,27 +14,9 @@ jobs:
           npm run build
           rm -rf node_modules
       - name: Test on Node 14
-        uses: actions/github-script@v3
-        with:
-          script: |
-            const { PostgresError } = require(`${process.env.GITHUB_WORKSPACE}/dist/`)
-
-            console.log(PostgresError.UNIQUE_VIOLATION)
-
-            if (PostgresError.UNIQUE_VIOLATION !== '23505') {
-              throw new Error('Failed')
-            }
+        run: npm run test
       - uses: actions/setup-node@v2
         with:
           node-version: 12
       - name: Test on Node 12
-        uses: actions/github-script@v3
-        with:
-          script: |
-            const { PostgresError } = require(`${process.env.GITHUB_WORKSPACE}/dist/`)
-
-            console.log(PostgresError.UNIQUE_VIOLATION)
-
-            if (PostgresError.UNIQUE_VIOLATION !== '23505') {
-              throw new Error('Failed')
-            }
+        run: npm run test
