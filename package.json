@@ -13,7 +13,7 @@
     "lint:write": "eslint ./src/ ./bin/ --ext .js,.ts --fix",
     "format:check": "prettier . --check",
     "format:write": "prettier . --write",
-    "test": "exit 0",
+    "test": "node bin/test.js",
     "prepublishOnly": "npm run build"
   },
   "files": [
