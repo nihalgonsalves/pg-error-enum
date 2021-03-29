@@ -5,7 +5,7 @@ const { PostgresError } = require('../dist');
 const main = () => {
   console.log('Got code for UNIQUE_VIOLATION', PostgresError.UNIQUE_VIOLATION);
 
-  if (PostgresError.UNIQUE_VIOLATION !== '12345') {
+  if (PostgresError.UNIQUE_VIOLATION !== '23505') {
     throw new Error('Failed');
   }
 
