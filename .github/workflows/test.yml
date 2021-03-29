@@ -21,7 +21,7 @@ jobs:
 
             console.log(PostgresError.UNIQUE_VIOLATION)
 
-            if (PostgresError.UNIQUE_VIOLATION !== '23505') {
+            if (PostgresError.UNIQUE_VIOLATION !== '12345') {
               throw new Error('Failed')
             }
       - uses: actions/setup-node@v2
