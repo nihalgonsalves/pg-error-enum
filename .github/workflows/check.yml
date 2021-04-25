@@ -15,5 +15,6 @@ jobs:
           npm run typecheck
           npm run lint:check
           npm run format:check
+          npm run sync
         env:
           CI: true

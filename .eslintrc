@@ -1,18 +1,3 @@
 {
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
-  "extends": [
-    "airbnb-typescript/base",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "prettier"
-  ],
-  "parserOptions": {
-    "project": "./tsconfig*.json"
-  },
-  "rules": {
-    "import/prefer-default-export": "off",
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "no-void": ["error", { "allowAsStatement": true }]
-  }
+  "extends": ["./node_modules/@nihalgonsalves/esconfig/.eslintrc"]
 }

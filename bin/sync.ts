@@ -1,8 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
-import { join } from 'path';
 import { writeFileSync } from 'fs';
+import { join } from 'path';
+
 import fetch from 'cross-fetch';
+import * as z from 'zod';
 
 const sourceUrl = (branch = 'master') =>
   `https://github.com/postgres/postgres/raw/${branch}/src/backend/utils/errcodes.txt`;
@@ -16,6 +18,7 @@ const stripCommentsAndEmptyLines = (lines: string[]) =>
   lines.filter((line) => line !== '' && line.charAt(0) !== '#');
 
 const sectionRegex = /^Section:\s(?<description>.*)$/;
+const SectionMatchGroups = z.object({ description: z.string().optional() });
 
 type Section = { description: string; lines: string[] };
 
@@ -25,15 +28,18 @@ const groupBySections = (lines: string[]): Section[] => {
 
   lines.forEach((line) => {
     const matches = sectionRegex.exec(line);
+    const description = matches?.groups
+      ? SectionMatchGroups.parse(matches.groups).description
+      : undefined;
 
-    if (matches?.groups) {
-      currentSection = matches.groups.description;
+    if (description) {
+      currentSection = description;
       sections[currentSection] = {
         description: currentSection,
         lines: [],
       };
     } else {
-      sections[currentSection].lines.push(line);
+      sections[currentSection]?.lines.push(line);
     }
   });
 
@@ -41,6 +47,12 @@ const groupBySections = (lines: string[]): Section[] => {
 };
 
 const errorLineRegex = /^(?<sqlstate>[A-Z0-9]*)\s*(?<severity>[EWS])\s*ERRCODE_(?<constant>[A-Z_]*)\s*(?<code>[a-z_]*)$/;
+const ErrorLineMatchGroups = z.object({
+  sqlstate: z.string(),
+  severity: z.string(),
+  constant: z.string(),
+  code: z.string(),
+});
 
 const parseErrorLine = (line: string) => {
   const matches = errorLineRegex.exec(line);
@@ -49,7 +61,9 @@ const parseErrorLine = (line: string) => {
     throw new Error(`Error parsing error line:\n\t"${line}"`);
   }
 
-  const { sqlstate, severity, constant, code } = matches.groups;
+  const { sqlstate, severity, constant, code } = ErrorLineMatchGroups.parse(
+    matches.groups,
+  );
 
   return {
     sqlstate,
@@ -79,8 +93,8 @@ const getEnum = async () => {
       .flatMap((section) =>
         section.errorCodes.map(
           (errorCode) =>
-            `  /** ${section.description}: [${errorCode.severity}] ${errorCode.code} */\n  ${errorCode.constant} = '${errorCode.sqlstate}',`
-        )
+            `  /** ${section.description}: [${errorCode.severity}] ${errorCode.code} */\n  ${errorCode.constant} = '${errorCode.sqlstate}',`,
+        ),
       )
       .join('\n'),
     '}',
@@ -92,4 +106,10 @@ const writeEnum = (enumString: string) => {
   writeFileSync(join(__dirname, '../src/PostgresError.ts'), enumString);
 };
 
-void getEnum().then(writeEnum);
+void getEnum()
+  .then(writeEnum)
+  .catch((e) => {
+    // eslint-disable-next-line no-console
+    console.error(e);
+    process.exit(1);
+  });

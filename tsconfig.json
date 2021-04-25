@@ -1,16 +1,12 @@
 {
+  "extends": "@nihalgonsalves/esconfig",
   "compilerOptions": {
     "target": "es2020",
+    // TODO: Also publish as ES Module?
     "module": "commonjs",
-    "strict": true,
     "allowJs": true,
     "checkJs": true,
-    "outDir": "./dist",
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "esModuleInterop": true
+    "outDir": "./dist"
   },
   "files": ["bin/sync.ts", "bin/test.js"]
 }

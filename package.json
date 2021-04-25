@@ -2,6 +2,16 @@
   "name": "pg-error-enum",
   "version": "0.5.0",
   "description": "TypeScript Enum for Postgres Errors with no runtime dependencies",
+  "author": "Nihal Gonsalves <nihal@nihalgonsalves.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nihalgonsalves/pg-error-enum.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nihalgonsalves/pg-error-enum/issues"
+  },
+  "homepage": "https://github.com/nihalgonsalves/pg-error-enum#readme",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -10,7 +20,6 @@
     "typecheck": "tsc --noEmit --project tsconfig.json && tsc --noEmit --project tsconfig.build.json",
     "build": "tsc --build tsconfig.build.json",
     "lint:check": "eslint ./src/ ./bin/ --ext .js,.ts",
-    "lint:write": "eslint ./src/ ./bin/ --ext .js,.ts --fix",
     "format:check": "prettier . --check",
     "format:write": "prettier . --write",
     "test": "node bin/test.js",
@@ -19,27 +28,16 @@
   "files": [
     "dist/**/*"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nihalgonsalves/pg-error-enum.git"
-  },
-  "author": "Nihal Gonsalves <nihal@nihalgonsalves.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/nihalgonsalves/pg-error-enum/issues"
-  },
-  "homepage": "https://github.com/nihalgonsalves/pg-error-enum#readme",
   "devDependencies": {
-    "@types/node": "^14.14.37",
-    "@typescript-eslint/eslint-plugin": "^4.20.0",
-    "@typescript-eslint/parser": "^4.20.0",
-    "cross-fetch": "^3.1.2",
-    "eslint": "^7.23.0",
-    "eslint-config-airbnb-typescript": "^12.3.1",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-import": "^2.22.1",
+    "@nihalgonsalves/esconfig": "^0.0.4",
+    "@types/node": "^14.14.41",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "cross-fetch": "^3.1.4",
+    "eslint": "^7.25.0",
     "prettier": "^2.2.1",
     "ts-node": "^9.1.1",
-    "typescript": "^4.2.3"
+    "typescript": "^4.2.4",
+    "zod": "^1.11.15"
   }
 }
