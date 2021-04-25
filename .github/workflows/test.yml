@@ -13,10 +13,23 @@ jobs:
           npm ci
           npm run build
           rm -rf node_modules
+      # Not using a matrix here since it's simpler
+      # to just duplicate it and not spawn new instances
       - name: Test on Node 14
-        run: npm run test
+        run: |
+          node -v
+          npm run test
       - uses: actions/setup-node@v2
         with:
           node-version: 12
       - name: Test on Node 12
-        run: npm run test
+        run: |
+          node -v
+          npm run test
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - name: Test on Node 16
+        run: |
+          node -v
+          npm run test
