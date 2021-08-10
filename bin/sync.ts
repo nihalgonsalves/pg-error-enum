@@ -46,7 +46,8 @@ const groupBySections = (lines: string[]): Section[] => {
   return Object.values(sections);
 };
 
-const errorLineRegex = /^(?<sqlstate>[A-Z0-9]*)\s*(?<severity>[EWS])\s*ERRCODE_(?<constant>[A-Z_]*)\s*(?<code>[a-z_]*)$/;
+const errorLineRegex =
+  /^(?<sqlstate>[A-Z0-9]*)\s*(?<severity>[EWS])\s*ERRCODE_(?<constant>[A-Z_]*)\s*(?<code>[a-z_]*)$/;
 const ErrorLineMatchGroups = z.object({
   sqlstate: z.string(),
   severity: z.string(),
