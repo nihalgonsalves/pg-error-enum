@@ -56,5 +56,6 @@ It follows the syntax defined in the text file, i.e., in short:
 3. Each error code is parsed using:
 
    ```ts
-   const errorLineRegex = /^(?<sqlstate>[A-Z0-9]*)\s*(?<severity>[EWS])\s*ERRCODE_(?<constant>[A-Z_]*)\s*(?<code>[a-z_]*)$/;
+   const errorLineRegex =
+     /^(?<sqlstate>[A-Z0-9]*)\s*(?<severity>[EWS])\s*ERRCODE_(?<constant>[A-Z_]*)\s*(?<code>[a-z_]*)$/;
    ```
