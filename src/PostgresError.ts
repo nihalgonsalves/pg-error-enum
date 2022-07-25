@@ -201,6 +201,8 @@ export enum PostgresError {
   TOO_MANY_JSON_OBJECT_MEMBERS = '2203E',
   /** Class 22 - Data Exception: [E] sql_json_scalar_required */
   SQL_JSON_SCALAR_REQUIRED = '2203F',
+  /** Class 22 - Data Exception: [E] sql_json_item_cannot_be_cast_to_target_type */
+  SQL_JSON_ITEM_CANNOT_BE_CAST_TO_TARGET_TYPE = '2203G',
   /** Class 23 - Integrity Constraint Violation: [E] integrity_constraint_violation */
   INTEGRITY_CONSTRAINT_VIOLATION = '23000',
   /** Class 23 - Integrity Constraint Violation: [E] restrict_violation */
