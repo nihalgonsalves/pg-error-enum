@@ -3,16 +3,21 @@
 import { writeFileSync } from 'fs';
 import { join } from 'path';
 
-import fetch from 'cross-fetch';
 import * as z from 'zod';
 
 const sourceUrl = (branch = 'master') =>
   `https://github.com/postgres/postgres/raw/${branch}/src/backend/utils/errcodes.txt`;
 
-const getSourceText = (): Promise<string[]> =>
-  fetch(sourceUrl())
-    .then((response) => response.text())
-    .then((text) => text.split('\n'));
+const getSourceText = async (): Promise<string[]> => {
+  const response = await fetch(sourceUrl());
+
+  if (!response.ok) {
+    throw new Error(`Error fetching errcodes.txt: ${response.status}`);
+  }
+
+  const text = await response.text();
+  return text.split('\n');
+};
 
 const stripCommentsAndEmptyLines = (lines: string[]) =>
   lines.filter((line) => line !== '' && line.charAt(0) !== '#');
