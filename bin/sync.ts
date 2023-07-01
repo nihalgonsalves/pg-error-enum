@@ -20,7 +20,7 @@ const getSourceText = async (): Promise<string[]> => {
 };
 
 const stripCommentsAndEmptyLines = (lines: string[]) =>
-  lines.filter((line) => line !== '' && line.charAt(0) !== '#');
+  lines.filter((line) => line !== '' && !line.startsWith('#'));
 
 const sectionRegex = /^Section:\s(?<description>.*)$/;
 const SectionMatchGroups = z.object({ description: z.string().optional() });
@@ -92,8 +92,6 @@ const getEnum = async () => {
     .then(parseSectionLines);
 
   return [
-    '/* eslint-disable max-len */',
-    '',
     'export enum PostgresError {',
     errorSections
       .flatMap((section) =>
@@ -115,7 +113,6 @@ const writeEnum = (enumString: string) => {
 void getEnum()
   .then(writeEnum)
   .catch((e) => {
-    // eslint-disable-next-line no-console
     console.error(e);
     process.exit(1);
   });
