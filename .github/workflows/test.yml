@@ -13,6 +13,10 @@ jobs:
           npm ci
           npm run build
           rm -rf node_modules
+      - name: Test on Node 20
+        run: |
+          node -v
+          npm run test
       # Not using a matrix here since it's simpler
       # to just duplicate it and not spawn new instances
       - uses: actions/setup-node@v3
