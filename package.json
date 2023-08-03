@@ -31,7 +31,7 @@
   "devDependencies": {
     "@nihalgonsalves/esconfig": "^0.3.0",
     "@types/node": "^18",
-    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
     "@typescript-eslint/parser": "^5.60.1",
     "eslint": "^8.44.0",
     "lefthook": "^1.4.8",
