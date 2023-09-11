@@ -30,7 +30,7 @@
   ],
   "devDependencies": {
     "@types/node": "^18",
-    "@nihalgonsalves/esconfig": "^0.5.1",
+    "@nihalgonsalves/esconfig": "^0.6.1",
     "@typescript-eslint/eslint-plugin": "^6.2.1",
     "@typescript-eslint/parser": "^6.2.1",
     "eslint": "^8.46.0",
