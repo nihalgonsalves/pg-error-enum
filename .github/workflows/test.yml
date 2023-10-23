@@ -27,17 +27,3 @@ jobs:
         run: |
           node -v
           npm run test
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - name: Test on Node 16
-        run: |
-          node -v
-          npm run test
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 14
-      - name: Test on Node 14
-        run: |
-          node -v
-          npm run test
