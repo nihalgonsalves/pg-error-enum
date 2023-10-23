@@ -30,14 +30,14 @@
   ],
   "devDependencies": {
     "@types/node": "^18",
-    "@nihalgonsalves/esconfig": "^0.6.1",
-    "@typescript-eslint/eslint-plugin": "^6.2.1",
-    "@typescript-eslint/parser": "^6.2.1",
-    "eslint": "^8.46.0",
-    "lefthook": "^1.4.8",
-    "prettier": "^3.0.1",
+    "@nihalgonsalves/esconfig": "^0.6.6",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "eslint": "^8.52.0",
+    "lefthook": "^1.5.2",
+    "prettier": "^3.0.3",
     "ts-node": "^10.9.1",
-    "typescript": "^5.1.6",
-    "zod": "^3.21.4"
+    "typescript": "^5.2.2",
+    "zod": "^3.22.4"
   }
 }
