@@ -36,12 +36,15 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      # waiting on: https://github.com/actions/setup-node/issues/531
+      - run: corepack enable
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           registry-url: 'https://registry.npmjs.org'
-          cache: 'npm'
-      - run: npm ci
+          cache: 'yarn'
+      - run: yarn install --immutable
       - env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        # yarn doesn't have an equivalent --provenance
         run: npm publish --provenance --access public

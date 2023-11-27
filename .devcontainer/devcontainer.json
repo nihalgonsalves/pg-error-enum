@@ -1,0 +1,13 @@
+{
+  "name": "Node.js",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["esbenp.prettier-vscode", "dbaeumer.vscode-eslint"]
+    }
+  },
+  "onCreateCommand": "yarn install",
+  "remoteUser": "node"
+}

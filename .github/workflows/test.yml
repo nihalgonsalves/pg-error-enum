@@ -5,19 +5,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # waiting on: https://github.com/actions/setup-node/issues/531
+      - run: corepack enable
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: 'yarn'
       - name: Install deps, build, then clear deps
         run: |
-          npm ci
-          npm run build
+          yarn install --immutable
+          yarn build
           rm -rf node_modules
       - name: Test on Node 20
         run: |
           node -v
-          npm run test
+          node bin/test.js
       # Not using a matrix here since it's simpler
       # to just duplicate it and not spawn new instances
       - uses: actions/setup-node@v4
@@ -26,4 +28,4 @@ jobs:
       - name: Test on Node 18
         run: |
           node -v
-          npm run test
+          node bin/test.js

@@ -5,17 +5,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # waiting on: https://github.com/actions/setup-node/issues/531
+      - run: corepack enable
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: 'yarn'
       - name: run eslint
         run: |
-          npm ci
-          npm run build
-          npm run typecheck
-          npm run lint:check
-          npm run format:check
-          npm run sync
-        env:
-          CI: true
+          yarn install --immutable
+          yarn build
+          yarn typecheck
+          yarn lint:check
+          yarn format:check
+          yarn sync
