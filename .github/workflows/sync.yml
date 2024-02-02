@@ -4,7 +4,7 @@ on:
   schedule:
     # https://crontab.guru/#0_9_*_*_1
     # At 09:00 on Monday.
-    - cron: '0 9 * * 1'
+    - cron: "0 9 * * 1"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'yarn'
+          cache: "yarn"
       - run: yarn install --immutable
       - run: yarn sync
       - name: git config

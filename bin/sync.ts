@@ -1,11 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
-import { writeFileSync } from 'fs';
-import { join } from 'path';
+import { writeFileSync } from "fs";
+import { join } from "path";
 
-import * as z from 'zod';
+import * as z from "zod";
 
-const sourceUrl = (branch = 'master') =>
+const sourceUrl = (branch = "master") =>
   `https://github.com/postgres/postgres/raw/${branch}/src/backend/utils/errcodes.txt`;
 
 const getSourceText = async (): Promise<string[]> => {
@@ -16,11 +16,11 @@ const getSourceText = async (): Promise<string[]> => {
   }
 
   const text = await response.text();
-  return text.split('\n');
+  return text.split("\n");
 };
 
 const stripCommentsAndEmptyLines = (lines: string[]) =>
-  lines.filter((line) => line !== '' && !line.startsWith('#'));
+  lines.filter((line) => line !== "" && !line.startsWith("#"));
 
 const sectionRegex = /^Section:\s(?<description>.*)$/;
 const SectionMatchGroups = z.object({ description: z.string().optional() });
@@ -29,7 +29,7 @@ type Section = { description: string; lines: string[] };
 
 const groupBySections = (lines: string[]): Section[] => {
   const sections: Record<string, Section> = {};
-  let currentSection = '';
+  let currentSection = "";
 
   lines.forEach((line) => {
     const matches = sectionRegex.exec(line);
@@ -92,7 +92,7 @@ const getEnum = async () => {
     .then(parseSectionLines);
 
   return [
-    'export enum PostgresError {',
+    "export enum PostgresError {",
     errorSections
       .flatMap((section) =>
         section.errorCodes.map(
@@ -100,14 +100,14 @@ const getEnum = async () => {
             `  /** ${section.description}: [${errorCode.severity}] ${errorCode.code} */\n  ${errorCode.constant} = '${errorCode.sqlstate}',`,
         ),
       )
-      .join('\n'),
-    '}',
-    '',
-  ].join('\n');
+      .join("\n"),
+    "}",
+    "",
+  ].join("\n");
 };
 
 const writeEnum = (enumString: string) => {
-  writeFileSync(join(__dirname, '../src/PostgresError.ts'), enumString);
+  writeFileSync(join(__dirname, "../src/PostgresError.ts"), enumString);
 };
 
 void getEnum()
