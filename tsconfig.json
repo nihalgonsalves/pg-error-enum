@@ -4,9 +4,12 @@
     "target": "es2020",
     // TODO: Also publish as ES Module?
     "module": "commonjs",
+    "moduleResolution": "node",
+    "verbatimModuleSyntax": false,
     "allowJs": true,
     "checkJs": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "types": ["node"],
   },
-  "files": ["bin/sync.ts", "bin/test.js"]
+  "files": ["bin/sync.ts", "bin/test.js"],
 }

@@ -10,7 +10,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'yarn'
+          cache: "yarn"
       - name: Install deps, build, then clear deps
         run: |
           yarn install --immutable

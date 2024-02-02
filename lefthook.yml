@@ -4,13 +4,13 @@ pre-commit:
   parallel: true
   commands:
     prettier:
-      glob: '*.{js,ts,jsx,tsx,mjs,mts,cjs,cts,json,yml,yaml,md}'
+      glob: "*.{js,ts,jsx,tsx,mjs,mts,cjs,cts,json,yml,yaml,md}"
       run: npx prettier --write {staged_files}
       stage_fixed: true
     eslint:
-      glob: '*.{js,ts,jsx,tsx,mjs,mts,cjs,cts}'
+      glob: "*.{js,ts,jsx,tsx,mjs,mts,cjs,cts}"
       run: npx eslint --fix {staged_files}
       stage_fixed: true
     typescript-build:
-      glob: '*.{js,ts,jsx,tsx,mjs,mts,cjs,cts}'
+      glob: "*.{js,ts,jsx,tsx,mjs,mts,cjs,cts}"
       run: npm run typecheck

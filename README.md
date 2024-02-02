@@ -22,20 +22,20 @@ yarn add pg-error-enum
 TypeScript or ES6 Modules
 
 ```ts
-import { PostgresError } from 'pg-error-enum';
+import { PostgresError } from "pg-error-enum";
 ```
 
 JavaScript
 
 ```js
-const PostgresError = require('pg-error-enum').PostgresError;
+const PostgresError = require("pg-error-enum").PostgresError;
 ```
 
 Usage
 
 ```ts
 if (error.code === PostgresError.UNIQUE_VIOLATION) {
-  throw new Error('That username is taken');
+  throw new Error("That username is taken");
 }
 ```
 
