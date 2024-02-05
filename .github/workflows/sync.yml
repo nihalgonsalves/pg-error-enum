@@ -29,7 +29,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           BRANCH="chore/sync-$(date +%s)"
-          MESSAGE="Sync with latest Postgres Errors"
+          MESSAGE="feat: sync with latest Postgres Errors"
 
           # UNCOMMENT FOR TESTING #
           # echo "// test for ${BRANCH}" >> src/PostgresError.ts
