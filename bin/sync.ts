@@ -97,7 +97,7 @@ const getEnum = async () => {
       .flatMap((section) =>
         section.errorCodes.map(
           (errorCode) =>
-            `  /** ${section.description}: [${errorCode.severity}] ${errorCode.code} */\n  ${errorCode.constant} = '${errorCode.sqlstate}',`,
+            `  /** ${section.description}: [${errorCode.severity}] ${errorCode.code} */\n  ${errorCode.constant} = "${errorCode.sqlstate}",`,
         ),
       )
       .join("\n"),
