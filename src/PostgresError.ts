@@ -241,6 +241,8 @@ export enum PostgresError {
   IN_FAILED_SQL_TRANSACTION = "25P02",
   /** Class 25 - Invalid Transaction State: [E] idle_in_transaction_session_timeout */
   IDLE_IN_TRANSACTION_SESSION_TIMEOUT = "25P03",
+  /** Class 25 - Invalid Transaction State: [E] transaction_timeout */
+  TRANSACTION_TIMEOUT = "25P04",
   /** Class 26 - Invalid SQL Statement Name: [E] invalid_sql_statement_name */
   INVALID_SQL_STATEMENT_NAME = "26000",
   /** Class 27 - Triggered Data Change Violation: [E] triggered_data_change_violation */
