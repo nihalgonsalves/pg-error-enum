@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.7.1](https://github.com/nihalgonsalves/pg-error-enum/compare/pg-error-enum-v0.7.0...pg-error-enum-v0.7.1) (2024-02-19)
+
+
+### Features
+
+* sync with latest Postgres Errors ([#523](https://github.com/nihalgonsalves/pg-error-enum/issues/523)) ([0c8f0ce](https://github.com/nihalgonsalves/pg-error-enum/commit/0c8f0cedf6b3adac63bdae64541e63cd52fa7f28))
+
+
+### Bug Fixes
+
+* update sync.ts quotes for prettier changes ([845a7c3](https://github.com/nihalgonsalves/pg-error-enum/commit/845a7c34cb9ec9049be545ad7c7963d6964fd83b))
+
 ## [0.7.0](https://github.com/nihalgonsalves/pg-error-enum/compare/v0.6.1...v0.7.0) (2023-09-11)
 
 
