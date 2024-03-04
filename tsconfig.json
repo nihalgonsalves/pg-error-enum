@@ -9,7 +9,7 @@
     "allowJs": true,
     "checkJs": true,
     "outDir": "./dist",
-    "types": ["node"],
+    "types": ["node"]
   },
-  "files": ["bin/sync.ts", "bin/test.js"],
+  "files": ["bin/sync.ts", "bin/test.js"]
 }
