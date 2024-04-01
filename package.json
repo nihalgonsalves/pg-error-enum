@@ -30,16 +30,16 @@
     "dist/**/*"
   ],
   "devDependencies": {
-    "@nihalgonsalves/esconfig": "^0.9.1",
+    "@nihalgonsalves/esconfig": "^0.9.5",
     "@types/node": "^18",
-    "@typescript-eslint/eslint-plugin": "^7.1.0",
-    "@typescript-eslint/parser": "^7.1.0",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
     "eslint": "^8.57.0",
     "eslint-plugin-import": "^2.29.1",
-    "lefthook": "^1.6.4",
+    "lefthook": "^1.6.7",
     "prettier": "^3.2.5",
     "tsx": "^4.7.1",
-    "typescript": "^5.3.3",
+    "typescript": "^5.4.3",
     "zod": "^3.22.4"
   }
 }
