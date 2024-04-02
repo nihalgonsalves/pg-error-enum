@@ -112,7 +112,7 @@ const writeEnum = (enumString: string) => {
 
 void getEnum()
   .then(writeEnum)
-  .catch((e) => {
+  .catch((e: unknown) => {
     console.error(e);
     process.exit(1);
   });
