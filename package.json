@@ -14,7 +14,7 @@
   "homepage": "https://github.com/nihalgonsalves/pg-error-enum#readme",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "packageManager": "yarn@4.1.1+sha256.f3cc0eda8e5560e529c7147565b30faa43b4e472d90e8634d7134a37c7f59781",
+  "packageManager": "yarn@4.2.2+sha512.c44e283c54e02de9d1da8687025b030078c1b9648d2895a65aab8e64225bfb7becba87e1809fc0b4b6778bbd47a1e2ab6ac647de4c5e383a53a7c17db6c3ff4b",
   "scripts": {
     "sync": "tsx bin/sync.ts",
     "clean": "rm -rf ./dist/",
@@ -30,16 +30,16 @@
     "dist/**/*"
   ],
   "devDependencies": {
-    "@nihalgonsalves/esconfig": "^0.9.5",
+    "@nihalgonsalves/esconfig": "^0.9.11",
     "@types/node": "^18",
-    "@typescript-eslint/eslint-plugin": "^7.4.0",
-    "@typescript-eslint/parser": "^7.4.0",
+    "@typescript-eslint/eslint-plugin": "^7.10.0",
+    "@typescript-eslint/parser": "^7.10.0",
     "eslint": "^8.57.0",
     "eslint-plugin-import": "^2.29.1",
-    "lefthook": "^1.6.7",
+    "lefthook": "^1.6.12",
     "prettier": "^3.2.5",
-    "tsx": "^4.7.1",
-    "typescript": "^5.4.3",
-    "zod": "^3.22.4"
+    "tsx": "^4.10.5",
+    "typescript": "^5.4.5",
+    "zod": "^3.23.8"
   }
 }
