@@ -457,6 +457,8 @@ export enum PostgresError {
   UNDEFINED_FILE = "58P01",
   /** Class 58 - System Error (errors external to PostgreSQL itself): [E] duplicate_file */
   DUPLICATE_FILE = "58P02",
+  /** Class 58 - System Error (errors external to PostgreSQL itself): [E] file_name_too_long */
+  FILE_NAME_TOO_LONG = "58P03",
   /** Class F0 - Configuration File Error: [E] config_file_error */
   CONFIG_FILE_ERROR = "F0000",
   /** Class F0 - Configuration File Error: [E] lock_file_exists */
