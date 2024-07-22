@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.2](https://github.com/nihalgonsalves/pg-error-enum/compare/pg-error-enum-v0.7.1...pg-error-enum-v0.7.2) (2024-07-22)
+
+
+### Features
+
+* add FILE_NAME_TOO_LONG (58P03) ([#533](https://github.com/nihalgonsalves/pg-error-enum/issues/533)) ([a7ab269](https://github.com/nihalgonsalves/pg-error-enum/commit/a7ab269182e674fa9a92e0c4e7d5ed866a1742ab))
+
 ## [0.7.1](https://github.com/nihalgonsalves/pg-error-enum/compare/pg-error-enum-v0.7.0...pg-error-enum-v0.7.1) (2024-02-19)
 
 
