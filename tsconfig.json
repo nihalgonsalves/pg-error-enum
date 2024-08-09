@@ -8,8 +8,9 @@
     "verbatimModuleSyntax": false,
     "allowJs": true,
     "checkJs": true,
+    "skipLibCheck": true,
     "outDir": "./dist",
     "types": ["node"]
   },
-  "files": ["bin/sync.ts", "bin/test.js"]
+  "files": ["bin/sync.ts", "bin/test.js", "eslint.config.js"]
 }
