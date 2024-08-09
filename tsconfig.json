@@ -1,5 +1,5 @@
 {
-  "extends": "@nihalgonsalves/esconfig",
+  "extends": "@nihalgonsalves/esconfig/tsconfig.shared.json",
   "compilerOptions": {
     "target": "es2020",
     // TODO: Also publish as ES Module?
@@ -12,5 +12,11 @@
     "outDir": "./dist",
     "types": ["node"]
   },
-  "files": ["bin/sync.ts", "bin/test.js", "eslint.config.js"]
+  "files": [
+    "src/index.ts",
+    "src/PostgresError.ts",
+    "bin/sync.ts",
+    "bin/test.js",
+    "eslint.config.mjs"
+  ]
 }

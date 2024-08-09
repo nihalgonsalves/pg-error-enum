@@ -18,4 +18,5 @@ jobs:
           yarn typecheck
           yarn lint:check
           yarn format:check
+          yarn knip
           yarn sync

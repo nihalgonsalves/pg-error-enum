@@ -14,7 +14,7 @@
   "homepage": "https://github.com/nihalgonsalves/pg-error-enum#readme",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "packageManager": "yarn@4.2.2+sha512.c44e283c54e02de9d1da8687025b030078c1b9648d2895a65aab8e64225bfb7becba87e1809fc0b4b6778bbd47a1e2ab6ac647de4c5e383a53a7c17db6c3ff4b",
+  "packageManager": "yarn@4.4.0+sha512.91d93b445d9284e7ed52931369bc89a663414e5582d00eea45c67ddc459a2582919eece27c412d6ffd1bd0793ff35399381cb229326b961798ce4f4cc60ddfdb",
   "scripts": {
     "sync": "tsx bin/sync.ts",
     "clean": "rm -rf ./dist/",
@@ -30,16 +30,11 @@
     "dist/**/*"
   ],
   "devDependencies": {
-    "@eslint/compat": "^1.1.1",
-    "@eslint/eslintrc": "^3.1.0",
-    "@eslint/js": "^9.8.0",
-    "@nihalgonsalves/esconfig": "^0.9.22",
-    "@types/eslint__eslintrc": "^2.1.2",
-    "@types/eslint__js": "^8.42.3",
+    "@nihalgonsalves/esconfig": "^0.10.2",
     "@types/node": "^18",
     "eslint": "^9.8.0",
-    "eslint-plugin-import": "^2.29.1",
-    "lefthook": "^1.7.11",
+    "knip": "^5.27.2",
+    "lefthook": "^1.7.12",
     "prettier": "^3.3.3",
     "tsx": "^4.17.0",
     "typescript": "^5.5.4",
