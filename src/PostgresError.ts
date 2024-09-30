@@ -57,6 +57,8 @@ export enum PostgresError {
   DIAGNOSTICS_EXCEPTION = "0Z000",
   /** Class 0Z - Diagnostics Exception: [E] stacked_diagnostics_accessed_without_active_handler */
   STACKED_DIAGNOSTICS_ACCESSED_WITHOUT_ACTIVE_HANDLER = "0Z002",
+  /** Class 10 - XQuery Error: [E] invalid_argument_for_xquery */
+  INVALID_ARGUMENT_FOR_XQUERY = "10608",
   /** Class 20 - Case Not Found: [E] case_not_found */
   CASE_NOT_FOUND = "20000",
   /** Class 21 - Cardinality Violation: [E] cardinality_violation */
