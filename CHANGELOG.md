@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.3](https://github.com/nihalgonsalves/pg-error-enum/compare/pg-error-enum-v0.7.2...pg-error-enum-v0.7.3) (2024-10-01)
+
+
+### Features
+
+* add INVALID_ARGUMENT_FOR_XQUERY (10608) ([#540](https://github.com/nihalgonsalves/pg-error-enum/issues/540)) ([e14399a](https://github.com/nihalgonsalves/pg-error-enum/commit/e14399ab41eaa87717476559f39571da8d486f39))
+
 ## [0.7.2](https://github.com/nihalgonsalves/pg-error-enum/compare/pg-error-enum-v0.7.1...pg-error-enum-v0.7.2) (2024-07-22)
 
 
