@@ -9,19 +9,26 @@ jobs:
       - run: corepack enable
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: "yarn"
       - name: Install deps, build, then clear deps
         run: |
           yarn install --immutable
           yarn build
           rm -rf node_modules
-      - name: Test on Node 20
+      - name: Test on Node 22
         run: |
           node -v
           node bin/test.js
       # Not using a matrix here since it's simpler
       # to just duplicate it and not spawn new instances
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Test on Node 20
+        run: |
+          node -v
+          node bin/test.js
       - uses: actions/setup-node@v4
         with:
           node-version: 18
