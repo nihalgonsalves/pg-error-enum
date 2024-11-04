@@ -308,9 +308,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nihalgonsalves/esconfig@npm:^0.10.13":
-  version: 0.10.13
-  resolution: "@nihalgonsalves/esconfig@npm:0.10.13"
+"@nihalgonsalves/esconfig@npm:^0.10.14":
+  version: 0.10.14
+  resolution: "@nihalgonsalves/esconfig@npm:0.10.14"
   dependencies:
     "@eslint/js": "npm:^9.13.0"
     eslint-config-prettier: "npm:^9.1.0"
@@ -323,7 +323,7 @@ __metadata:
     eslint: ^9.13.0
     typescript: ^5.5.4
     typescript-eslint: ^8.4.0
-  checksum: 10c0/5d7c2d42921287b7ed5a59ffef79309264c016b3d7efba028411826cdb90020b12629ac34b5cbceca64a686397339654ecca0025e91dbea0f310c38c340daef9
+  checksum: 10c0/8a503d8ac9fe8cd7a63ed247e74a6c0ca08e7b5af3de5a3aaaa297b81c7e05afe295ce0e06566f1eb5386fe3b34fca5fed70be2acc0274dab1dc9078d1aed0c7
   languageName: node
   linkType: hard
 
@@ -2396,9 +2396,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"knip@npm:^5.36.1":
-  version: 5.36.1
-  resolution: "knip@npm:5.36.1"
+"knip@npm:^5.36.2":
+  version: 5.36.2
+  resolution: "knip@npm:5.36.2"
   dependencies:
     "@nodelib/fs.walk": "npm:1.2.8"
     "@snyk/github-codeowners": "npm:1.1.0"
@@ -2422,7 +2422,7 @@ __metadata:
   bin:
     knip: bin/knip.js
     knip-bun: bin/knip-bun.js
-  checksum: 10c0/a6a6616ebaa77427db815b34e74148bacfcc7d1f7cdc1019ff1dc3949054e4038326d98b07f4483ca1111ef104924d5a37a97ff03265268e98907a47c5ea90fa
+  checksum: 10c0/8cb2548a055e8ccbfeaaebd7df981f046becedc2a9166b03c7e367897adabaaa5b866204fdb210a06d9fdb923b8143f03d1a5e1a8c2501ad714525cf22265740
   languageName: node
   linkType: hard
 
@@ -2988,10 +2988,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "pg-error-enum@workspace:."
   dependencies:
-    "@nihalgonsalves/esconfig": "npm:^0.10.13"
+    "@nihalgonsalves/esconfig": "npm:^0.10.14"
     "@types/node": "npm:^18"
     eslint: "npm:^9.14.0"
-    knip: "npm:^5.36.1"
+    knip: "npm:^5.36.2"
     lefthook: "npm:^1.8.2"
     prettier: "npm:^3.3.3"
     tsx: "npm:^4.19.2"
