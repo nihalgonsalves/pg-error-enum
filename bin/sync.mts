@@ -1,9 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 import { writeFileSync } from "fs";
-import { join } from "path";
 
-import * as z from "zod";
+import { z } from "zod";
 
 const sourceUrl = (branch = "master") =>
   `https://github.com/postgres/postgres/raw/${branch}/src/backend/utils/errcodes.txt`;
@@ -107,7 +106,14 @@ const getEnum = async () => {
 };
 
 const writeEnum = (enumString: string) => {
-  writeFileSync(join(__dirname, "../src/PostgresError.ts"), enumString);
+  writeFileSync(
+    new URL(
+      "../src/PostgresError.ts",
+      // @ts-expect-error requires package.json type: module
+      import.meta.url,
+    ),
+    enumString,
+  );
 };
 
 void getEnum()

@@ -15,7 +15,7 @@
   "files": [
     "src/index.ts",
     "src/PostgresError.ts",
-    "bin/sync.ts",
+    "bin/sync.mts",
     "bin/test.js",
     "eslint.config.mjs"
   ]
