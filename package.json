@@ -14,7 +14,7 @@
   "homepage": "https://github.com/nihalgonsalves/pg-error-enum#readme",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "packageManager": "yarn@4.5.1+sha512.341db9396b6e289fecc30cd7ab3af65060e05ebff4b3b47547b278b9e67b08f485ecd8c79006b405446262142c7a38154445ef7f17c1d5d1de7d90bf9ce7054d",
+  "packageManager": "yarn@4.6.0+sha512.5383cc12567a95f1d668fbe762dfe0075c595b4bfff433be478dbbe24e05251a8e8c3eb992a986667c1d53b6c3a9c85b8398c35a960587fbd9fa3a0915406728",
   "scripts": {
     "sync": "tsx bin/sync.ts",
     "clean": "rm -rf ./dist/",
@@ -32,13 +32,13 @@
   "devDependencies": {
     "@nihalgonsalves/esconfig": "^0.10.20",
     "@types/node": "^18",
-    "eslint": "^9.19.0",
+    "eslint": "^9.20.0",
     "knip": "^5.43.6",
     "lefthook": "^1.10.10",
     "prettier": "^3.4.2",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3",
-    "typescript-eslint": "^8.22.0",
+    "typescript-eslint": "^8.23.0",
     "zod": "^3.24.1"
   }
 }
