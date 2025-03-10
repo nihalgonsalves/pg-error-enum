@@ -6,9 +6,7 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "verbatimModuleSyntax": false,
-    "allowJs": true,
-    "checkJs": true,
-    "skipLibCheck": true,
+    "erasableSyntaxOnly": false,
     "outDir": "./dist",
     "types": ["node"]
   },
