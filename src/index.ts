@@ -1,1 +1,1 @@
-export { PostgresError } from "./PostgresError";
+export { PostgresError } from "./PostgresError.js";

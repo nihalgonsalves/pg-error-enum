@@ -107,11 +107,7 @@ const getEnum = async () => {
 
 const writeEnum = (enumString: string) => {
   writeFileSync(
-    new URL(
-      "../src/PostgresError.ts",
-      // @ts-expect-error requires package.json type: module
-      import.meta.url,
-    ),
+    new URL("../src/PostgresError.ts", import.meta.url),
     enumString,
   );
 };

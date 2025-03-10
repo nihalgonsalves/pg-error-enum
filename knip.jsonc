@@ -1,5 +1,5 @@
 {
   "$schema": "https://unpkg.com/knip@5/schema.json",
-  "entry": ["src/index.ts!", "bin/sync.mts"],
+  "entry": ["src/index.ts!", "bin/sync.ts"],
   "project": ["**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}"],
 }

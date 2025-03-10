@@ -11,28 +11,31 @@ jobs:
         with:
           node-version: 22
           cache: "yarn"
-      - name: Install deps, build, then clear deps
+      - name: Install deps and build
         run: |
           yarn install --immutable
           yarn build
           rm -rf node_modules
-      - name: Test on Node 22
+
+      - name: test built package on node@22
+        working-directory: ./package-test/
         run: |
+          # CI implies --immutable
+          yarn install --no-immutable
+
           node -v
-          node bin/test.js
-      # Not using a matrix here since it's simpler
-      # to just duplicate it and not spawn new instances
+          node test.cjs
+          node test.mjs
+
+        # Not using a matrix here since it's simpler
+        # to just duplicate it and not spawn new instances
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Test on Node 20
+      - name: test build package on node@20
+        working-directory: ./package-test/
         run: |
           node -v
-          node bin/test.js
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18
-      - name: Test on Node 18
-        run: |
-          node -v
-          node bin/test.js
+          node test.cjs
+          node test.mjs

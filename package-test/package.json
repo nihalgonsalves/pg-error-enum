@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "pg-error-enum": "../"
+  }
+}

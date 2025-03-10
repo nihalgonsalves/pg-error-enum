@@ -19,17 +19,18 @@ yarn add pg-error-enum
 
 ### Usage
 
-TypeScript or ES6 Modules
-
 ```ts
 import { PostgresError } from "pg-error-enum";
 ```
 
-JavaScript
+<details>
+<summary>Legacy CommonJS</summary>
 
 ```js
-const PostgresError = require("pg-error-enum").PostgresError;
+const { PostgresError } = require("pg-error-enum");
 ```
+
+</details>
 
 Usage
 
