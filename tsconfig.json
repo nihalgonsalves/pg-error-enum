@@ -1,11 +1,11 @@
 {
   "extends": "@nihalgonsalves/esconfig/tsconfig.shared.json",
   "compilerOptions": {
-    "target": "es2020",
-    // TODO: Also publish as ES Module?
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "verbatimModuleSyntax": false,
+    // https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping
+    "lib": ["ES2023"],
+    "module": "NodeNext",
+    "target": "ES2023",
+    "moduleResolution": "NodeNext",
     "erasableSyntaxOnly": false,
     "outDir": "./dist",
     "types": ["node"]
@@ -13,8 +13,7 @@
   "files": [
     "src/index.ts",
     "src/PostgresError.ts",
-    "bin/sync.mts",
-    "bin/test.js",
-    "eslint.config.mjs"
+    "bin/sync.ts",
+    "eslint.config.js"
   ]
 }
