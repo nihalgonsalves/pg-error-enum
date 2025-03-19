@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.0](https://github.com/nihalgonsalves/pg-error-enum/compare/pg-error-enum-v0.7.3...pg-error-enum-v1.0.0) (2025-03-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* This drops support for Node 18, and switches to a pure ESM package. This means that you either have to use `"type": "module"` in your `package.json`, or upgrade to a Node version that supports [require(esm)](https://nodejs.org/api/modules.html#loading-ecmascript-modules-using-require), i.e. >= [v20.19.0](https://nodejs.org/en/blog/release/v20.19.0#requireesm-is-now-enabled-by-default), >= [v22.12.0](https://nodejs.org/en/blog/release/v22.12.0#requireesm-is-now-enabled-by-default), or v23 and above.
+
+### Build System
+
+* switch to esm ([#552](https://github.com/nihalgonsalves/pg-error-enum/issues/552)) ([449c422](https://github.com/nihalgonsalves/pg-error-enum/commit/449c422e9e3534d37b4e2b8646ba871a11a8252c))
+
 ## [0.7.3](https://github.com/nihalgonsalves/pg-error-enum/compare/pg-error-enum-v0.7.2...pg-error-enum-v0.7.3) (2024-10-01)
 
 
