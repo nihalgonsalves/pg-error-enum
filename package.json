@@ -26,6 +26,7 @@
     "lint:check": "eslint",
     "format:check": "prettier . --check",
     "format:write": "prettier . --write",
+    "prepublishOnly": "npm run build",
     "test": "node bin/test.js"
   },
   "files": [
