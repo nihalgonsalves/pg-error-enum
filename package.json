@@ -1,7 +1,7 @@
 {
   "name": "pg-error-enum",
   "type": "module",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "TypeScript Enum for Postgres Errors with no runtime dependencies",
   "author": "Nihal Gonsalves <nihal@nihalgonsalves.com>",
   "license": "MIT",

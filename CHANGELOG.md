@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/nihalgonsalves/pg-error-enum/compare/pg-error-enum-v1.0.1...pg-error-enum-v1.0.2) (2025-03-21)
+
+
+### Bug Fixes
+
+* add back prepublish build ([#557](https://github.com/nihalgonsalves/pg-error-enum/issues/557)) ([1618d57](https://github.com/nihalgonsalves/pg-error-enum/commit/1618d570c478d30dd170fe778c884f9e3cceeffc))
+
 ## [1.0.1](https://github.com/nihalgonsalves/pg-error-enum/compare/pg-error-enum-v1.0.0...pg-error-enum-v1.0.1) (2025-03-19)
 
 
