@@ -38,12 +38,12 @@
   "devDependencies": {
     "@nihalgonsalves/esconfig": "^0.11.2",
     "@types/node": "^18",
-    "eslint": "^9.30.1",
-    "knip": "^5.61.3",
-    "lefthook": "^1.11.14",
+    "eslint": "^9.32.0",
+    "knip": "^5.62.0",
+    "lefthook": "^1.12.2",
     "prettier": "^3.6.2",
-    "typescript": "^5.8.3",
-    "typescript-eslint": "^8.35.1",
-    "zod": "^3.25.67"
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.38.0",
+    "zod": "^4.0.14"
   }
 }
