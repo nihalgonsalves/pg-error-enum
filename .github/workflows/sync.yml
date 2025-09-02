@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           ssh-key: ${{ secrets.ACTION_DEPLOY_KEY }}
       # waiting on: https://github.com/actions/setup-node/issues/531
