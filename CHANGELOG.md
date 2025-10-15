@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://github.com/nihalgonsalves/pg-error-enum/compare/pg-error-enum-v1.0.2...pg-error-enum-v2.0.0) (2025-10-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* test on node 24 (new lts), drop node 18 ([#568](https://github.com/nihalgonsalves/pg-error-enum/issues/568))
+
+### Bug Fixes
+
+* also update engine range ([36dd118](https://github.com/nihalgonsalves/pg-error-enum/commit/36dd118f03d27e1d2bccde13572f579ff74d85fb))
+
+
+### Miscellaneous Chores
+
+* test on node 24 (new lts), drop node 18 ([#568](https://github.com/nihalgonsalves/pg-error-enum/issues/568)) ([c0acad8](https://github.com/nihalgonsalves/pg-error-enum/commit/c0acad8180a2e73b385309b611daeeaad3852463))
+
 ## [1.0.2](https://github.com/nihalgonsalves/pg-error-enum/compare/pg-error-enum-v1.0.1...pg-error-enum-v1.0.2) (2025-03-21)
 
 
