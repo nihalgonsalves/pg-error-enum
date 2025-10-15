@@ -17,7 +17,7 @@
     "types": "./dist/index.d.ts",
     "default": "./dist/index.js"
   },
-  "packageManager": "yarn@4.7.0+sha512.5a0afa1d4c1d844b3447ee3319633797bcd6385d9a44be07993ae52ff4facabccafb4af5dcd1c2f9a94ac113e5e9ff56f6130431905884414229e284e37bb7c9",
+  "packageManager": "yarn@4.10.3+sha512.c38cafb5c7bb273f3926d04e55e1d8c9dfa7d9c3ea1f36a4868fa028b9e5f72298f0b7f401ad5eb921749eb012eb1c3bb74bf7503df3ee43fd600d14a018266f",
   "scripts": {
     "sync": "node --experimental-strip-types bin/sync.ts",
     "clean": "rm -rf ./dist/",
@@ -36,14 +36,14 @@
     "node": "^20.19.0 || ^22.12.0 || >23.0.0"
   },
   "devDependencies": {
-    "@nihalgonsalves/esconfig": "^0.11.2",
+    "@nihalgonsalves/esconfig": "^0.12.1",
     "@types/node": "^18",
-    "eslint": "^9.34.0",
-    "knip": "^5.63.0",
-    "lefthook": "^1.12.3",
+    "eslint": "^9.37.0",
+    "knip": "^5.65.0",
+    "lefthook": "^1.13.6",
     "prettier": "^3.6.2",
-    "typescript": "^5.9.2",
-    "typescript-eslint": "^8.41.0",
-    "zod": "^4.1.5"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.1",
+    "zod": "^4.1.12"
   }
 }

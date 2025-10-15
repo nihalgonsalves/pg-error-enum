@@ -1,9 +1,9 @@
-import tseslint from "typescript-eslint";
+import { defineConfig } from "eslint/config";
 
 // eslint-disable-next-line import/extensions
 import sharedConfig from "@nihalgonsalves/esconfig/eslint.config.shared.js";
 
-export default tseslint.config(
+export default defineConfig(
   { ignores: ["package-test", "dist"] },
   ...sharedConfig,
   {
