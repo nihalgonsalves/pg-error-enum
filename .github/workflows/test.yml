@@ -9,7 +9,7 @@ jobs:
       - run: corepack enable
       - uses: actions/setup-node@v5
         with:
-          node-version: 22
+          node-version: 24
           cache: "yarn"
       - name: Install deps and build
         run: |
@@ -17,7 +17,7 @@ jobs:
           yarn build
           rm -rf node_modules
 
-      - name: test built package on node@22
+      - name: test built package on node@24
         working-directory: ./package-test/
         run: |
           # CI implies --immutable
@@ -32,8 +32,8 @@ jobs:
 
       - uses: actions/setup-node@v5
         with:
-          node-version: 20
-      - name: test build package on node@20
+          node-version: 22
+      - name: test build package on node@22
         working-directory: ./package-test/
         run: |
           node -v
