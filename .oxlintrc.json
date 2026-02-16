@@ -1,0 +1,7 @@
+{
+  "extends": ["node_modules/@nihalgonsalves/esconfig/.oxlintrc.json"],
+  "ignorePatterns": ["package-test/"],
+  "rules": {
+    "typescript/no-duplicate-enum-values": "off"
+  }
+}

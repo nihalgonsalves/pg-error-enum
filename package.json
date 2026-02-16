@@ -28,21 +28,21 @@
     "clean": "rm -rf ./dist/",
     "typecheck": "tsc --noEmit --project tsconfig.json && tsc --noEmit --project tsconfig.build.json",
     "build": "tsc --build tsconfig.build.json",
-    "lint:check": "eslint",
+    "lint:check": "oxlint --type-aware --report-unused-disable-directives",
     "format:check": "oxfmt --check",
     "format:write": "oxfmt",
     "prepublishOnly": "npm run build",
     "test": "node bin/test.js"
   },
   "devDependencies": {
-    "@nihalgonsalves/esconfig": "^0.13.4",
+    "@nihalgonsalves/esconfig": "^0.14.0",
     "@types/node": "^22",
-    "eslint": "^9.39.2",
     "knip": "^5.82.1",
     "lefthook": "^2.0.16",
     "oxfmt": "^0.33.0",
+    "oxlint": "^1.48.0",
+    "oxlint-tsgolint": "^0.14.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.54.0",
     "zod": "^4.3.6"
   },
   "engines": {

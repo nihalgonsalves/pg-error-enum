@@ -1,5 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-
 import { writeFileSync } from "fs";
 
 import { z } from "zod";
