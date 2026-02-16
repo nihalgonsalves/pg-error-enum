@@ -17,9 +17,9 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 24
-          cache: "yarn"
-      - run: yarn install --immutable
-      - run: yarn sync
+          cache: "pnpm"
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm sync
       - name: git config
         run: |
           git config --local user.name "GitHub Actions"

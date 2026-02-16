@@ -3,16 +3,16 @@
 pre-commit:
   parallel: true
   commands:
-    prettier:
+    oxfmt:
       glob: "*.{js,ts,jsx,tsx,mjs,mts,cjs,cts,json,yml,yaml,md}"
-      run: yarn prettier --write {staged_files}
+      run: pnpm oxfmt --no-error-on-unmatched-pattern {staged_files}
       stage_fixed: true
     eslint:
       glob: "*.{js,ts,jsx,tsx,mjs,mts,cjs,cts}"
-      run: yarn eslint --fix {staged_files}
+      run: pnpm eslint --no-warn-ignored --fix {staged_files}
       stage_fixed: true
     typescript-build:
       glob: "*.{js,ts,jsx,tsx,mjs,mts,cjs,cts}"
-      run: yarn run typecheck
+      run: pnpm run typecheck
     knip:
-      run: yarn knip
+      run: pnpm knip

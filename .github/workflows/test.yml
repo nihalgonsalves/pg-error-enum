@@ -10,18 +10,17 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 24
-          cache: "yarn"
+          cache: "pnpm"
       - name: Install deps and build
         run: |
-          yarn install --immutable
-          yarn build
+          pnpm install --frozen-lockfile
+          pnpm build
           rm -rf node_modules
 
       - name: test built package on node@24
         working-directory: ./package-test/
         run: |
-          # CI implies --immutable
-          yarn install --no-immutable
+          pnpm install --frozen-lockfile
 
           node -v
           node test.cjs

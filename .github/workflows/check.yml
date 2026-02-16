@@ -10,13 +10,11 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 24
-          cache: "yarn"
-      - name: run eslint
-        run: |
-          yarn install --immutable
-          yarn build
-          yarn typecheck
-          yarn lint:check
-          yarn format:check
-          yarn knip
-          yarn sync
+          cache: "pnpm"
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - run: pnpm typecheck
+      - run: pnpm lint:check
+      - run: pnpm format:check
+      - run: pnpm knip
+      - run: pnpm sync

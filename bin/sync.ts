@@ -66,9 +66,7 @@ const parseErrorLine = (line: string) => {
     throw new Error(`Error parsing error line:\n\t"${line}"`);
   }
 
-  const { sqlstate, severity, constant, code } = ErrorLineMatchGroups.parse(
-    matches.groups,
-  );
+  const { sqlstate, severity, constant, code } = ErrorLineMatchGroups.parse(matches.groups);
 
   return {
     sqlstate,
@@ -106,10 +104,7 @@ const getEnum = async () => {
 };
 
 const writeEnum = (enumString: string) => {
-  writeFileSync(
-    new URL("../src/PostgresError.ts", import.meta.url),
-    enumString,
-  );
+  writeFileSync(new URL("../src/PostgresError.ts", import.meta.url), enumString);
 };
 
 void getEnum()
