@@ -35,15 +35,15 @@
     "test": "node bin/test.js"
   },
   "devDependencies": {
-    "@nihalgonsalves/esconfig": "^0.17.2",
+    "@nihalgonsalves/esconfig": "^0.17.3",
     "@types/node": "^22",
-    "knip": "^6.4.1",
-    "lefthook": "^2.1.5",
-    "oxfmt": "^0.45.0",
-    "oxlint": "^1.60.0",
-    "oxlint-tsgolint": "^0.21.0",
-    "typescript": "^6.0.2",
-    "zod": "^4.3.6"
+    "knip": "^6.10.0",
+    "lefthook": "^2.1.6",
+    "oxfmt": "^0.47.0",
+    "oxlint": "^1.62.0",
+    "oxlint-tsgolint": "^0.22.1",
+    "typescript": "^6.0.3",
+    "zod": "^4.4.2"
   },
   "engines": {
     "node": "^22.12.0 || >24.0.0"
