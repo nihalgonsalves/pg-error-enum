@@ -1,7 +1,2 @@
-blockExoticSubdeps: true
-
-onlyBuiltDependencies:
-  - esbuild
-  - lefthook
-
-strictDepBuilds: true
+allowBuilds:
+  lefthook: true

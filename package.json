@@ -37,16 +37,16 @@
   "devDependencies": {
     "@nihalgonsalves/esconfig": "^0.17.3",
     "@types/node": "^22",
-    "knip": "^6.10.0",
+    "knip": "^6.12.0",
     "lefthook": "^2.1.6",
-    "oxfmt": "^0.47.0",
-    "oxlint": "^1.62.0",
+    "oxfmt": "^0.48.0",
+    "oxlint": "^1.63.0",
     "oxlint-tsgolint": "^0.22.1",
     "typescript": "^6.0.3",
-    "zod": "^4.4.2"
+    "zod": "^4.4.3"
   },
   "engines": {
     "node": "^22.12.0 || >24.0.0"
   },
-  "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319"
+  "packageManager": "pnpm@11.0.6+sha512.97f906e1da2bedac3df83cadae04b4753a130092dd49d55cd36825ad3e623e9df3f97754f8f259e699172a360fac569acf2f908e7732bdae3eddb2dcf7e121fd"
 }
