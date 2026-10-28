@@ -9,7 +9,7 @@ jobs:
       - run: corepack enable
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: 24
+          node-version: 26
           cache: "pnpm"
       - name: Install deps and build
         run: |
@@ -17,7 +17,7 @@ jobs:
           pnpm build
           rm -rf node_modules
 
-      - name: test built package on node@24
+      - name: test built package on node@26
         working-directory: ./package-test/
         run: |
           pnpm install --frozen-lockfile
@@ -31,6 +31,18 @@ jobs:
 
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
+          # EOL: 2028-04-30
+          node-version: 24
+      - name: test build package on node@24
+        working-directory: ./package-test/
+        run: |
+          node -v
+          node test.cjs
+          node test.mjs
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          # EOL: 2027-04-30
           node-version: 22
       - name: test build package on node@22
         working-directory: ./package-test/
