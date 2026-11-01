@@ -1,8 +1,6 @@
 {
   "name": "Node.js",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:26",
   "customizations": {
     "vscode": {
       "extensions": ["oxc.oxc-vscode"]

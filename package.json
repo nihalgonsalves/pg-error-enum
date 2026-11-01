@@ -32,7 +32,7 @@
     "format:check": "oxfmt --check",
     "format:write": "oxfmt",
     "prepublishOnly": "npm run build",
-    "test": "node bin/test.js"
+    "test": "cd ./package-test/ && node test.mjs"
   },
   "devDependencies": {
     "@nihalgonsalves/esconfig": "^0.18.2",
