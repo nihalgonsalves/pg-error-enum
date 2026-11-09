@@ -159,6 +159,8 @@ export enum PostgresError {
   BAD_COPY_FILE_FORMAT = "22P04",
   /** Class 22 - Data Exception: [E] untranslatable_character */
   UNTRANSLATABLE_CHARACTER = "22P05",
+  /** Class 22 - Data Exception: [E] datum_version_mismatch */
+  DATUM_VERSION_MISMATCH = "22P07",
   /** Class 22 - Data Exception: [E] not_an_xml_document */
   NOT_AN_XML_DOCUMENT = "2200L",
   /** Class 22 - Data Exception: [E] invalid_xml_document */
