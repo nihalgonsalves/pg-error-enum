@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/nihalgonsalves/pg-error-enum/compare/pg-error-enum-v2.0.1...pg-error-enum-v2.1.0) (2026-11-09)
+
+
+### Features
+
+* sync with latest Postgres Errors ([#606](https://github.com/nihalgonsalves/pg-error-enum/issues/606)) ([db0d045](https://github.com/nihalgonsalves/pg-error-enum/commit/db0d045930e1a99725b17dca53ba3d116ae34ce7))
+
 ## [2.0.1](https://github.com/nihalgonsalves/pg-error-enum/compare/pg-error-enum-v2.0.0...pg-error-enum-v2.0.1) (2025-10-20)
 
 

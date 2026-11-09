@@ -1,6 +1,6 @@
 {
   "name": "pg-error-enum",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "TypeScript Enum for Postgres Errors with no runtime dependencies",
   "homepage": "https://github.com/nihalgonsalves/pg-error-enum#readme",
   "bugs": {
