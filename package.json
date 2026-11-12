@@ -37,10 +37,10 @@
   "devDependencies": {
     "@nihalgonsalves/esconfig": "^0.18.2",
     "@types/node": "^22.20.5",
-    "knip": "^6.44.0",
+    "knip": "^6.44.1",
     "lefthook": "^2.2.2",
-    "oxfmt": "^0.75.0",
-    "oxlint": "^1.90.0",
+    "oxfmt": "^0.76.0",
+    "oxlint": "^1.91.0",
     "oxlint-tsgolint": "^7.0.2005",
     "typescript": "^7.0.2",
     "zod": "^4.6.7"
