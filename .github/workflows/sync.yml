@@ -5,13 +5,19 @@ on:
     # https://crontab.guru/#0_9_*_*_1
     # At 09:00 on Monday.
     - cron: "0 9 * * 1"
+permissions: {}
 jobs:
   build:
+    permissions:
+      contents: read
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.1
         with:
           ssh-key: ${{ secrets.ACTION_DEPLOY_KEY }}
+          # needed to push the sync branch with the deploy key
+          persist-credentials: true
       # waiting on: https://github.com/actions/setup-node/issues/531
       - run: corepack enable
       - uses: actions/setup-node@v7.1.0

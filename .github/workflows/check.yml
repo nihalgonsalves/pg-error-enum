@@ -1,10 +1,15 @@
 name: check
 on: [push]
+permissions: {}
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
       # waiting on: https://github.com/actions/setup-node/issues/531
       - run: corepack enable
       - uses: actions/setup-node@v7.1.0
@@ -18,3 +23,17 @@ jobs:
       - run: pnpm format:check
       - run: pnpm knip
       - run: pnpm sync
+
+  zizmor:
+    name: Run zizmor 🌈
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write # Required for upload-sarif (used by zizmor-action) to upload SARIF files.
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Run zizmor 🌈
+        uses: zizmorcore/zizmor-action@v0.8.0
